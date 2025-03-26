@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <title>Login</title>
+</head>
+<body class="font-sans flex flex-col h-screen">
+  <nev class="flex-grow">
+    <div class="navbar bg-base-100 shadow-sm bg-slate-200">
+        <div class="w-16 h-16 overflow-hidden">
+            <img src="./index.img/0f0fcbb4-e3f3-41ff-a507-3e3e5bd22285_BD-1976-688.jpg_2200x2200q80.jpg" alt="" class="w-full h-full object-cover rounded-full">
+        </div>
+        <div class="flex-1">
+          <a class="btn btn-ghost text-3xl text-red-700">Bangla <br> Bazar</a>
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal px-1">
+            <li>
+              <details>
+                <summary>Bangladesh</summary>
+                <ul class="bg-base-100 rounded-t-none p-2">
+                  <li><a>Pakistan</a></li>
+                  <li><a>Sri Lanka</a></li>
+                  <li><a>Nepa</a></li>
+                  <li><a>Myanmar</a></li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>English</summary>
+                <ul class="bg-base-100 rounded-t-none p-2">
+                  <li><a>Bengali</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </nev>
+
+  <div class="bg-cover bg-center bg-red-900">
+    <div class="min-h-screen flex justify-center items-center bg-black bg-opacity-50">
+      <div class="hero-content gap-52">
+        <div class="text-center lg:text-left">
+          <h1 class="text-5xl font-bold text-yellow-900">Become A Bangla <br> Bazar Seller <br> Today!</h1>
+          <p class="py-6 text-2xl text-white">
+            Create a Daraz seller account now and reach millions of <br> customers!
+          </p>
+        </div>
+  
+        <!-- Login Form -->
+        <div class="bg-blue-200 p-8 rounded-lg shadow-lg w-96">
+          <h2 class="text-3xl text-center font-semibold mb-6 text-yellow-50">Login</h2>
+          <form action="next.html" method="POST">
+            <div class="mb-4">
+              <label for="email" class="block text-sm font-medium text-gray-100">Email</label>
+              <input type="email" id="email" name="email" class="input input-bordered w-full mt-2" required />
+            </div>
+            <div class="mb-4">
+              <label for="password" class="block text-sm font-medium text-gray-100">Password</label>
+              <div class="relative">
+                <input type="password" id="password" name="password" class="input input-bordered w-full mt-2" required />
+                <button type="button" id="togglePassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">
+                  👁️
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-full mt-4 text-white">Login</button>
+          </form>
+          <div class="mt-4 text-center text-sm text-yellow-100">
+            <p>Reset password</p>
+            <p>Create a new account</p>
+            <p>Register as Global Seller</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+  </div>
+
+</body>
+</html>
