@@ -69,7 +69,7 @@
                 </button>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary w-full mt-4 text-white">Login</button>
+            <button type="submit" class="btn btn-primary w-full mt-4 text-white bg-black">Login</button>
           </form>
           <div class="mt-4 text-center text-sm text-yellow-100">
             <p>Reset password</p>
@@ -80,8 +80,18 @@
   
       </div>
     </div>
-  
   </div>
-
+  
+  <script>
+    document.getElementById("togglePassword").addEventListener("click", function () {
+      let passwordField = document.getElementById("password");
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+      } else {
+        passwordField.type = "password";
+      }
+    });
+  </script>
+  
 </body>
 </html>
