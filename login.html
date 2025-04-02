@@ -7,14 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <title>Login</title>
 </head>
-<body class="font-sans flex flex-col h-screen">
+<body class="">
   <nev class="flex-grow">
-    <div class="navbar bg-base-100 shadow-sm bg-slate-200">
-        <div class="w-16 h-16 overflow-hidden">
+    <div class="navbar bg-slate-600">
+        <div class="w-16 h-16 overflow-hidden w-9 h-9">
             <img src="./index.img/0f0fcbb4-e3f3-41ff-a507-3e3e5bd22285_BD-1976-688.jpg_2200x2200q80.jpg" alt="" class="w-full h-full object-cover rounded-full">
         </div>
         <div class="flex-1">
-          <a class="btn btn-ghost text-3xl text-red-700">Bangla <br> Bazar</a>
+          <a class="btn btn-ghost text-3xl text-red-700"><span class="text-yellow-400 hover:translate-x-0">Bangla</span> Bazar</a>
         </div>
         <div class="flex-none">
           <ul class="menu menu-horizontal px-1">
@@ -42,28 +42,26 @@
     </div>
   </nev>
 
-  <div class="bg-cover bg-center bg-red-900">
-    <div class="min-h-screen flex justify-center items-center bg-black bg-opacity-50">
+ 
+  <div class=" bg-slate-300 text-lg text-lg ">
+    <div class=" flex justify-center items-center bg-black bg-opacity-70">
       <div class="hero-content gap-52">
-        <div class="text-center lg:text-left">
-          <h1 class="text-5xl font-bold text-yellow-900">Become A Bangla <br> Bazar Seller <br> Today!</h1>
-          <p class="py-6 text-2xl text-white">
-            Create a Daraz seller account now and reach millions of <br> customers!
-          </p>
-        </div>
   
         <!-- Login Form -->
-        <div class="bg-blue-200 p-8 rounded-lg shadow-lg w-96">
-          <h2 class="text-3xl text-center font-semibold mb-6 text-yellow-50">Login</h2>
+        <div class=" bg-black bg-opacity-70 sh p-8 rounded-lg shadow-lg w-96">
+          <h2 class="text-4xl text-yellow-300 text-center font-semibold mb-6 text-yellow-50 "> <span class=" hover:translate-y-[-10px] text-yellow-500">L</span> <span class="text-cyan-600 ">o</span> <span class="text-gray-500">g</span> <span class="text-amber-400">i</span> <span class="text-blue-900">n</span></h2>
           <form action="next.html" method="POST">
+
             <div class="mb-4">
               <label for="email" class="block text-sm font-medium text-gray-100">Email</label>
               <input type="email" id="email" name="email" class="input input-bordered w-full mt-2" required />
             </div>
+            
+
             <div class="mb-4">
               <label for="password" class="block text-sm font-medium text-gray-100">Password</label>
               <div class="relative">
-                <input type="password" id="password" name="password" class="input input-bordered w-full mt-2" required />
+                <input type="password" id="password" name="password" class="input input-bordered w-full mt-2" required/>
                 <button type="button" id="togglePassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">
                   👁️
                 </button>
@@ -92,6 +90,5 @@
       }
     });
   </script>
-  
 </body>
 </html>
