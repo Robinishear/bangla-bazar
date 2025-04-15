@@ -1,46 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <title>Sign Up</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <title>Sign Up</title>
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated-up {
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 1.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+    .delay-5 { animation-delay: 1s; }
+    .delay-6 { animation-delay: 1.2s; }
+    .delay-7 { animation-delay: 1.6s; }
+    .delay-8 { animation-delay: 1.8s; }
+    .delay-6 { animation-delay: 1.9s; }
+    .delay-7 { animation-delay: 2.2s; }
+    .delay-8 { animation-delay: 2.4s; }
+
+
+    
+    body {
+      background: linear-gradient(45deg, #000000, #151a18);
+      background-size: 200% 200%;
+      animation: gradient-bg 6s ease infinite;
+      overflow: hidden;
+    }
+
+    @keyframes gradient-bg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card-border {
+      position: relative;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(56, 161, 105, 0.8);
+    }
+
+    @keyframes animate-border {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .input-field {
+      border: 1px solid #4a5568;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      color: #f7fafc;
+      background-color: #2d3748;
+      transition: all 0.3s ease;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #a0e6ca;
+      box-shadow: 0 0 10px rgba(160, 230, 202, 0.7);
+      transform: translateY(-2px);
+    }
+
+    .sign-in-button {
+      background-color: #a0e6ca;
+      color: #1a202c;
+      border-radius: 0.5rem;
+      padding: 1.1rem 2.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 0 12px rgba(160, 230, 202, 0.8);
+    }
+
+    .sign-in-button:hover {
+      background-color: #c3f7e5;
+      box-shadow: 0 0 18px rgba(160, 230, 202, 1);
+      transform: scale(1.05);
+    }
+
+    .link {
+      color: #a0aec0;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      animation: floatLinks 3s ease-in-out infinite;
+    }
+
+    .link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(to right, #a0e6ca, #68d391);
+      transition: width 0.3s ease-in-out;
+    }
+
+    .link:hover {
+      color: #a0e6ca;
+    }
+
+    .link:hover::after {
+      width: 100%;
+    }
+
+    .login-icon, .heart-icon {
+      animation: float-icon 3s ease-in-out infinite;
+    }
+
+    @keyframes float-icon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+  
+    .link-wrapper {
+      animation: fadeInLinks 1.4s ease-out forwards;
+      position: relative;
+      opacity: 0;
+    }
+
+    @keyframes fadeInLinks {
+      0% {
+        transform: translateY(15px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes floatLinks {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+  </style>
+  </style>
 </head>
-<body class="flex justify-center items-center  bg-gray-900">
-    <div class="w-96 p-6 shadow-lg rounded-2xl bg-black">
-        <h2 class="text-2xl font-bold text-center mb-4 text-white hover:translate-y-[-9px]"> <span class="text-yellow-300">S</span> <span class="text-indigo-700">i</span>
-        <samp class="text-green-700">G</samp> <span class="text-orange-200">s</span> <span class="text-yellow-400">U</span><span class="text-fuchsia-500">p</span> </h2>
-        <div class="space-y-4">
-            <div>
-                <label for="First Name" class="block text-sm font-medium text-gray-700 text-white">Enter your First Name</label>
-                <input id="First Name" type="First Name" placeholder="Enter your Name" class="mt-1 p-2 w-full border rounded-lg text-white" />
-            </div>
-            <div>
-                <label for="Last Name" class="block text-sm font-medium text-gray-700 text-white"">Enter your Last Name</label>
-                <input id="Last Name" type="Last Name" placeholder="Enter your Last Name" class="mt-1 p-2 w-full border rounded-lg text-white" />
-            </div>
-            <div>
-                <label for="Date" class="block text-sm font-medium text-gray-700 text-white"">Date</label>
-                <input id="date" type="date" placeholder="Enter your date" class="mt-1 p-2 w-full border rounded-lg text-white" />
-            </div>
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 text-white"><span class="text-cyan-600">Enter your Email</span></label>
-                <input id="email" type="email" placeholder="Enter your email" class="mt-1 p-2 w-full border rounded-lg text-white" />
-            </div>
-            <div>
-                <label for="password" class="block text-sm font-medium text-gray-700 text-white"><span class="text-orange-300">Password</span></label>
-                <input id="password" type="password" placeholder="Enter your password" class="mt-1 p-2 w-full border rounded-lg text-white" />   
-            </div>
-            <div>
-                <label for="Next password" class="block text-sm font-medium text-gray-700 text-white"><span class="text-amber-300">Next password</span></label>
-                <input id="Next password" type="Next password" placeholder="Enter your Next password" class="mt-1 p-2 w-full border rounded-lg text-white" />   
-            </div>
-            <div>
-                <button class="btn btn-soft btn-primary bg-black  w-full hover:translate-y-[-9px] text-xl font-semibold text-amber-200 ">Next Naw</button>
-            </div>
-        </div>
+<body class="flex items-center justify-center min-h-screen ">
+  <div class="p-6 bg-blac w-96 rounded-2xl animated-up delay-1">
+    <h2 class="text-2xl underline text-3xl font-bold font-bold text-center mb-4 text-white animated-up delay-2 hover:translate-y-[-9px] transition-transform duration-300">
+      <span class="text-yellow-300">S</span>
+      <span class="text-indigo-700">i</span>
+      <span class="text-green-700">G</span>
+      <span class="text-orange-200">s</span>
+      <span class="text-yellow-400">U</span>
+      <span class="text-fuchsia-500">p</span>
+    </h2>
+    <div class="space-y-4">
+      <div class="animated-up delay-3">
+        <label for="First Name" class="block text-sm font-medium text-white">Enter your First Name</label>
+        <input id="First Name" type="text" placeholder="Enter your Name" class="w-full p-2 mt-1 border rounded-lg" />
+      </div>
+      <div class="animated-up delay-4">
+        <label for="Last Name" class="block text-sm font-medium text-white">Enter your Last Name</label>
+        <input id="Last Name" type="text" placeholder="Enter your Last Name" class="w-full p-2 mt-1 border rounded-lg" />
+      </div>
+      <div class="animated-up delay-5">
+        <label for="date" class="block text-sm font-medium text-white">Date</label>
+        <input id="date" type="date" class="w-full p-2 mt-1 text-white border rounded-lg" />
+      </div>
+      <div class="animated-up delay-6">
+        <label for="email" class="block text-sm font-medium text-white">
+          <span class="text-cyan-600">Enter your Email</span>
+        </label>
+        <input id="email" type="email" placeholder="Enter your email" class="w-full p-2 mt-1 border rounded-lg" />
+      </div>
+      <div class="animated-up delay-7">
+        <label for="password" class="block text-sm font-medium text-white">
+          <span class="text-orange-300">Password</span>
+        </label>
+        <input id="password" type="password" placeholder="Enter your password" class="w-full p-2 border rounded-lg mt-1border" />
+      </div>
+      <div class="animated-up delay-8">
+        <label for="confirm-password" class="block text-sm font-medium text-white">
+          <span class="text-amber-300">Confirm Password</span>
+        </label>
+        <input id="confirm-password" type="password" placeholder="Enter your Confirm password" class="w-full p-2 mt-1 border rounded-lg" />
+      </div>
+      <div class="animated-up delay-80">
+        <button class="w-full mb-10 text-xl sign-in-button text-amber-100"> <a href="./index.html">Next Now</a></button>
+      </div>
     </div>
+  </div>
 </body>
 </html>
+
+

@@ -1,94 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title></title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(45deg, #000000, #07e475);
+      background-size: 200% 200%;
+      animation: gradient-bg 10s ease infinite;
+      overflow: hidden;
+    }
+
+    @keyframes gradient-bg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card-border {
+      position: relative;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(56, 161, 105, 0.8);
+    }
+
+    .card-border::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(120deg, #68d391, #a0e6ca, #68d391, #a0e6ca);
+      z-index: -1;
+      filter: blur(20px);
+      opacity: 0.9;
+      background-size: 400%;
+      animation: animate-border 10s ease-in-out infinite;
+    }
+
+    @keyframes animate-border {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .input-field {
+      border: 1px solid #4a5568;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      color: #f7fafc;
+      background-color: #2d3748;
+      transition: all 0.3s ease;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #a0e6ca;
+      box-shadow: 0 0 10px rgba(160, 230, 202, 0.7);
+      transform: translateY(-2px);
+    }
+
+    .sign-in-button {
+      background-color: #a0e6ca;
+      color: #1a202c;
+      border-radius: 0.5rem;
+      padding: 1.1rem 2.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 0 12px rgba(160, 230, 202, 0.8);
+    }
+
+    .sign-in-button:hover {
+      background-color: #c3f7e5;
+      box-shadow: 0 0 18px rgba(160, 230, 202, 1);
+      transform: scale(1.05);
+    }
+
+    .link {
+      color: #a0aec0;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      animation: floatLinks 3s ease-in-out infinite;
+    }
+
+    .link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(to right, #a0e6ca, #68d391);
+      transition: width 0.3s ease-in-out;
+    }
+
+    .link:hover {
+      color: #a0e6ca;
+    }
+
+    .link:hover::after {
+      width: 100%;
+    }
+
+    .login-icon, .heart-icon {
+      animation: float-icon 3s ease-in-out infinite;
+    }
+
+    @keyframes float-icon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* ✅ New link animation */
+    .link-wrapper {
+      animation: fadeInLinks 1.4s ease-out forwards;
+      position: relative;
+      opacity: 0;
+    }
+
+    @keyframes fadeInLinks {
+      0% {
+        transform: translateY(15px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes floatLinks {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+  </style>
 </head>
-<body class="">
-  <nev class="flex-grow">
-    <div class="navbar bg-slate-600">
-        <div class="w-16 h-16 overflow-hidden w-9 h-9">
-            <img src="./index.img/0f0fcbb4-e3f3-41ff-a507-3e3e5bd22285_BD-1976-688.jpg_2200x2200q80.jpg" alt="" class="w-full h-full object-cover rounded-full">
-        </div>
-        <div class="flex-1">
-          <a class="btn btn-ghost text-3xl text-red-700"><span class="text-yellow-400 hover:translate-x-0">Bangla</span> Bazar</a>
-        </div>
-        <div class="flex-none">
-          <ul class="menu menu-horizontal px-1">
-            <li>
-              <details>
-                <summary>Bangladesh</summary>
-                <ul class="bg-base-100 rounded-t-none p-2">
-                  <li><a>Pakistan</a></li>
-                  <li><a>Sri Lanka</a></li>
-                  <li><a>Nepa</a></li>
-                  <li><a>Myanmar</a></li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>English</summary>
-                <ul class="bg-base-100 rounded-t-none p-2">
-                  <li><a>Bengali</a></li>
-                </ul>
-              </details>
-            </li>
-          </ul>
-        </div>
+<body class="flex items-center justify-center h-screen">
+  <div class="p-8 bg-gray-800 rounded-lg shadow-lg card-border w-96">
+    <div class="mb-8 text-center">
+      <h2 class="flex items-center justify-center text-2xl font-bold text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-3 login-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+        লগইন
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="0" class="w-6 h-6 ml-3 heart-icon">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.53L12 21.35z" />
+        </svg>
+      </h2>
     </div>
-  </nev>
-
- 
-  <div class=" bg-slate-300 text-lg text-lg ">
-    <div class=" flex justify-center items-center bg-black bg-opacity-70">
-      <div class="hero-content gap-52">
-  
-        <!-- Login Form -->
-        <div class=" bg-black bg-opacity-70 sh p-8 rounded-lg shadow-lg w-96">
-          <h2 class="text-4xl text-yellow-300 text-center font-semibold mb-6 text-yellow-50 "> <span class=" hover:translate-y-[-10px] text-yellow-500">L</span> <span class="text-cyan-600 ">o</span> <span class="text-gray-500">g</span> <span class="text-amber-400">i</span> <span class="text-blue-900">n</span></h2>
-          <form action="next.html" method="POST">
-
-            <div class="mb-4">
-              <label for="email" class="block text-sm font-medium text-gray-100">Email</label>
-              <input type="email" id="email" name="email" class="input input-bordered w-full mt-2" required />
-            </div>
-            
-
-            <div class="mb-4">
-              <label for="password" class="block text-sm font-medium text-gray-100">Password</label>
-              <div class="relative">
-                <input type="password" id="password" name="password" class="input input-bordered w-full mt-2" required/>
-                <button type="button" id="togglePassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">
-                  👁️
-                </button>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary w-full mt-4 text-white bg-black">Login</button>
-          </form>
-          <div class="mt-4 text-center text-sm text-yellow-100">
-            <p>Reset password</p>
-            <p>Create a new account</p>
-            <p>Register as Global Seller</p>
-          </div>
-        </div>
-  
-      </div>
+    <div class="mb-6">
+      <input type="text" placeholder="ইউজারনেম" class="w-full input-field">
+    </div>
+    <div class="mb-8">
+      <input type="password" placeholder="পাসওয়ার্ড" class="w-full input-field">
+    </div>
+    <button class="w-full mb-6 sign-in-button">সাইন ইন</button>
+    <div class="flex justify-between text-sm text-amber-900 link-wrapper">
+      <a href="#" class="text-xl font-bold link">Forgot password</a>
+      <a href="/Sign Up.html" class="text-xl font-bold link"> S i G s U p </a>
     </div>
   </div>
-  
-  <script>
-    document.getElementById("togglePassword").addEventListener("click", function () {
-      let passwordField = document.getElementById("password");
-      if (passwordField.type === "password") {
-        passwordField.type = "text";
-      } else {
-        passwordField.type = "password";
-      }
-    });
-  </script>
 </body>
 </html>
